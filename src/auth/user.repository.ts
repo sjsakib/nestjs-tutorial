@@ -6,7 +6,6 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { runInThisContext } from 'vm';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
