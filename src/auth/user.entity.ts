@@ -6,6 +6,7 @@ import {
   Unique,
   OneToMany,
 } from 'typeorm';
+import { Exclude } from 'class-transformer';
 import * as bcrypt from 'bcrypt';
 import { Task } from 'src/tasks/task.entity';
 
@@ -19,9 +20,11 @@ export class User extends BaseEntity {
   username: string;
 
   @Column()
+  @Exclude()
   password: string;
 
   @Column()
+  @Exclude()
   salt: string;
 
   @OneToMany(
